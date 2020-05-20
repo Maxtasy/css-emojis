@@ -1,0 +1,128 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --emoji-size: 30rem;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.emoji {
+    width: var(--emoji-size);
+    height: var(--emoji-size);
+    background-color: #ffd65d;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.eyes {
+    position: absolute;
+    width: calc(var(--emoji-size) / 2);
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.eye {
+    position: absolute;
+    width: calc(var(--emoji-size) / 9);
+    height: calc(var(--emoji-size) / 6);
+    background-color: #0D0D0D;
+    border-radius: 50%;
+}
+
+.eye-left {
+    left: 0;
+}
+
+.eye-right {
+    right: 0;
+}
+
+.mouth {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0D0D0D;
+}
+
+.smile {
+    --mouth-height: calc(var(--emoji-size) / 3);
+    border-radius: 5% 5% var(--mouth-height) var(--mouth-height);
+    width: calc(var(--emoji-size) * 2 / 3);
+    height: var(--mouth-height);
+}
+
+.surprised {
+    border-radius: 50%;
+    width: calc(var(--emoji-size) / 4);
+    height: calc(var(--emoji-size) / 3);
+}
+
+.mask {
+    --mask-width: calc(var(--emoji-size) * 2 / 3);
+    transform: none;
+    left: calc(50% - var(--mask-width) / 2);
+    background-color: white;
+    border: calc(var(--emoji-size) * .02) solid #A6A6A6;
+    width: var(--mask-width);
+    height: calc(var(--emoji-size) / 3);
+    border-radius: 10%;
+}
+
+.strap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(var(--emoji-size) * 4 / 3);
+    height: calc(var(--emoji-size) / 9);
+    transform-origin: center;
+    background-color: white;
+    border: calc(var(--emoji-size) * .02) solid #A6A6A6;
+    z-index: -1;
+}
+
+.strap-left {
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+
+.strap-right {
+    transform: translate(-50%, -50%) rotate(-15deg);
+}
+
+@media(max-width: 1520px) {
+    :root {
+        --emoji-size: 20rem;
+    }
+}
+
+@media(max-width: 1000px) {
+    :root {
+        --emoji-size: 15rem;
+    }
+}
+
+@media(max-width: 800px) {
+    :root {
+        --emoji-size: 10rem;
+    }
+}
+
+@media(max-width: 520px) {
+    :root {
+        --emoji-size: 7rem;
+    }
+}
